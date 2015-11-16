@@ -1,0 +1,37 @@
+﻿@model Capstone.UI.Models.StockViewModel
+@{
+    ViewBag.Title = "Index";
+
+    WebGrid grid = new WebGrid();
+    if(Model.Company !=null)
+    {
+        grid = new WebGrid(Model.Company.QStockPrice.Reverse(), canPage: false, canSort:false);
+    }
+}
+
+@using (Html.BeginForm("Index", "StockChart"))
+{
+    <div>
+        @Html.TextBoxFor(m => m.Search)
+        <input type="submit" value="Search"/>
+    </div>
+    <div>
+@*        <ul>
+        @foreach (var p in Model.Company.QStockPrice)
+        {
+            <li>Date: @p.Date.ToShortDateString() Open: @p.Open Closed @p.Close</li>
+        }
+        </ul>*@
+    @if(Model.Company !=null)
+    {
+        @(grid.GetHtml(columns: 
+        new []
+        {
+            grid.Column("date", "Date",format: @<div>@item.Date.ToShortDateString()</div>),
+            grid.Column("Open", "Open"),
+            grid.Column("Close", "Close")
+        
+        }))
+    }
+    </div>
+}

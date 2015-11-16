@@ -1,0 +1,15 @@
+﻿@model Capstone.Domain.Models.Company
+@{
+    ViewBag.Title = "Details";
+}
+<h2>@Model.CompanyName</h2>
+<div>
+    <ul>
+        @foreach (var news in Model.BingNews)
+        {
+            <li>
+                <a href="@news.Url">@news.Title</a><span> @news.Date @news.Source</span>
+            </li>
+        }
+    </ul>
+</div>

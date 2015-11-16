@@ -1,0 +1,26 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="StockNewsScraper.MainWindow"
+        Title="MainWindow" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="153*"/>
+            <RowDefinition Height="166*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="441" Margin="23,33,0,0" Stroke="Black" VerticalAlignment="Top" Width="269" Grid.RowSpan="2"/>
+
+        <Button Content="Load" HorizontalAlignment="Left" Margin="39,153,0,0" VerticalAlignment="Top" Width="101" Click="Button_Click" Height="23" Grid.Row="1"/>
+        <ListBox x:Name="StockList" HorizontalAlignment="Left" Height="333" Margin="39,74,0,0" VerticalAlignment="Top" Width="101" Grid.RowSpan="2" RenderTransformOrigin="0.508,0.545"/>
+        <Button Content="Start" HorizontalAlignment="Left" Margin="154,153,0,0" Grid.Row="1" VerticalAlignment="Top" Width="110" Click="Button_Click_1" Height="24"/>
+        <ListBox x:Name="NewsSourceList" HorizontalAlignment="Left" Height="333" Margin="154,74,0,0" VerticalAlignment="Top" Width="110" Grid.RowSpan="2"/>
+        <Label Content="News Source" HorizontalAlignment="Left" Margin="169,43,0,0" VerticalAlignment="Top"/>
+        <Label Content="Company List" HorizontalAlignment="Left" Margin="46,43,0,0" VerticalAlignment="Top"/>
+        <ProgressBar x:Name="SourceProgress" HorizontalAlignment="Left" Height="21" Margin="23,228,0,0" Grid.Row="1" VerticalAlignment="Top" Width="735"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="441" Margin="336,33,0,0" Stroke="Black" VerticalAlignment="Top" Width="422" Grid.RowSpan="2"/>
+        <Label Content="Output" HorizontalAlignment="Left" Margin="511,43,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="OutputText" HorizontalAlignment="Left" Height="369" Margin="361,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="369" Grid.RowSpan="2"/>
+        <ProgressBar x:Name="OverallProgress" HorizontalAlignment="Left" Height="21" Margin="23,259,0,0" Grid.Row="1" VerticalAlignment="Top" Width="735"/>
+
+    </Grid>
+</Window>

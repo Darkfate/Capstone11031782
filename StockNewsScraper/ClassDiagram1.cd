@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="StockNewsScraper.App" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockNewsScraper.MainWindow" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAABAAAAAABAQAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockNewsScraper.Utilities" Collapsed="true">
+    <Position X="11.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockNewsScraper.Properties.Resources" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockNewsScraper.Properties.Settings" Collapsed="true">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockNewsScraper.Scraper.MarketWatch" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAgAAACAAAAAAACAACAAAAA=</HashCode>
+      <FileName>Scraper\MarketWatch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockNewsScraper.Scraper.NASDAQ" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Scraper\NASDAQ.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockNewsScraper.Scraper.NewsScraper" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAIIAAAAAAAAAEAAAAAAAgAACAAAAAAAAAAGAAAAA=</HashCode>
+      <FileName>Scraper\NewsScraper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="StockNewsScraper.Scraper.TheGuardian" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAACAACAAAAA=</HashCode>
+      <FileName>Scraper\TheGuardian.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockNewsScraper.Scraper.YahooFinance" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scraper\YahooFinance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="StockNewsScraper.Scraper.INewsScraper" Collapsed="true">
+    <Position X="9.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Scraper\INewsScraper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

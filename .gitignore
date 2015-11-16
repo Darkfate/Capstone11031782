@@ -1,0 +1,7 @@
+bin
+.nuget/NuGet.Config
+Capstone.Domain/obj/
+Capstone.UI.Tests/obj/
+Capstone.UI/obj/
+Capstone.WebScraper/obj/
+StockNewsScraper/obj/

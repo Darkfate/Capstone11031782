@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capstone.UI", "Capstone.UI\Capstone.UI.csproj", "{596FBF52-5003-4BC9-9A2B-1C2869A61059}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capstone.Domain", "Capstone.Domain\Capstone.Domain.csproj", "{921B51C5-60AD-4FF7-B131-BD12F8C7F6A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capstone.WebScraper", "Capstone.WebScraper\Capstone.WebScraper.csproj", "{0B4EB69F-987F-440F-AF5F-A57635B91C6F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{8DC9150A-01AF-448D-9445-D529BB23AC3B}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockNewsScraper", "StockNewsScraper\StockNewsScraper.csproj", "{DEF2B2A0-3648-4FE7-8217-E5BF75924C7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{596FBF52-5003-4BC9-9A2B-1C2869A61059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{596FBF52-5003-4BC9-9A2B-1C2869A61059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{596FBF52-5003-4BC9-9A2B-1C2869A61059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{596FBF52-5003-4BC9-9A2B-1C2869A61059}.Release|Any CPU.Build.0 = Release|Any CPU
+		{921B51C5-60AD-4FF7-B131-BD12F8C7F6A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{921B51C5-60AD-4FF7-B131-BD12F8C7F6A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{921B51C5-60AD-4FF7-B131-BD12F8C7F6A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{921B51C5-60AD-4FF7-B131-BD12F8C7F6A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B4EB69F-987F-440F-AF5F-A57635B91C6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B4EB69F-987F-440F-AF5F-A57635B91C6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B4EB69F-987F-440F-AF5F-A57635B91C6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B4EB69F-987F-440F-AF5F-A57635B91C6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEF2B2A0-3648-4FE7-8217-E5BF75924C7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEF2B2A0-3648-4FE7-8217-E5BF75924C7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEF2B2A0-3648-4FE7-8217-E5BF75924C7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEF2B2A0-3648-4FE7-8217-E5BF75924C7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

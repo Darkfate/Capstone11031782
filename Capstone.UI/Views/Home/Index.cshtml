@@ -1,0 +1,18 @@
+﻿@model IEnumerable<string>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Index</h2>
+<div>
+@*    @using(Html.BeginForm("GetSymbol", "Home"))
+    {
+        <div><label>Search for Symbol </label><input id="symb" name="symb" type="text" placeholder="AAPL"/><button type="submit" value="Submit">Search</button></div>
+        <div><span>@ViewBag.Response</span></div>
+    }*@
+    <ul>
+    @foreach (var s in Model)
+    {
+        <li>@Html.ActionLink(s, "Index", "StockChart", new { id = s }, null)</li>
+    }
+    </ul>
+</div>

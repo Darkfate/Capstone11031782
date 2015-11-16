@@ -1,0 +1,14 @@
+﻿<html>
+    <head>
+        <title>Capstone 11031782</title>
+    </head>
+<body>
+        @using(Html.BeginForm("Details", "Company"))
+        {
+            <div><label>Search for Symbol </label><input id="symb" name="symb" type="text" placeholder="AAPL"/><button type="submit" value="Submit">Search</button></div>
+        }
+<section id="main">
+@RenderBody()
+</section>
+</body>
+</html>
