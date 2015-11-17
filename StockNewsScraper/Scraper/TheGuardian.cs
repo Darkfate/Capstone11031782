@@ -20,10 +20,12 @@ namespace StockNewsScraper.Scraper
         protected override void GetLinks(string symbol)
         {
             int count = 0;
-                Func<string> getGoogleUrl = 
-                    () => string.Format(
-                            "https://www.googleapis.com/customsearch/v1element?key=AIzaSyCVAXiUzRYsML1Pv6RwSG1gunmMikTzQqY&num=10&hl=en&source=gcsc&cx=007466294097402385199%3Am2ealvuxh1i&q={0}&sort=date%3Ar%3A{1}%3A{2}&googlehost=www.gogole.com&start={3}",
-                            symbol, StartDate, EndDate, count);
+
+            // Function to build url
+            Func<string> getGoogleUrl = 
+                () => string.Format(
+                        "https://www.googleapis.com/customsearch/v1element?key=AIzaSyCVAXiUzRYsML1Pv6RwSG1gunmMikTzQqY&num=10&hl=en&source=gcsc&cx=007466294097402385199%3Am2ealvuxh1i&q={0}&sort=date%3Ar%3A{1}%3A{2}&googlehost=www.gogole.com&start={3}",
+                        symbol, StartDate, EndDate, count);
 
             string url = getGoogleUrl();
 
@@ -36,10 +38,12 @@ namespace StockNewsScraper.Scraper
 
             count = count + googleResponse.results.Count();
 
+            // Move to next page and scrape again. For somereason we can't get more than 90 results
             while (count < totalResult && count < 90)
             {
                 json = Utilities.MakeRequest(getGoogleUrl());
 
+                // Deserialise JSON response and add it to the list.
                 googleResponse = JsonConvert.DeserializeObject<GoogleJsonResponse>(json);
 
                 resultLinks.AddRange(googleResponse.results);
@@ -53,6 +57,7 @@ namespace StockNewsScraper.Scraper
         {
             base.Scrape(symbol);
 
+            // Loop through each result and collect data
             foreach (var result in resultLinks)
             {
                 try
@@ -86,6 +91,7 @@ namespace StockNewsScraper.Scraper
         private List<GoogleJsonResponse.Result> resultLinks;
         private const string articleUrl = "http://www.marketwatch.com/story";
 
+        // Class for JSON response
         private class GoogleJsonResponse
         {
                 public Context context { get; set; }

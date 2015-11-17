@@ -26,12 +26,14 @@ namespace StockNewsScraper
     /// </summary>
     public partial class MainWindow : Window
     {
+        // Initialise startup components
         public MainWindow()
         {
             InitializeComponent();
             CompList = new ObservableCollection<string>();
             StockList.ItemsSource = CompList;
 
+            // Add scraper to list
             NewsSourceList.SelectionMode = SelectionMode.Multiple;
             Scrapers = new ObservableCollection<INewsScraper>();
             Scrapers.Add(new MarketWatch());
@@ -47,6 +49,7 @@ namespace StockNewsScraper
         public ObservableCollection<string> CompList { get; set; }
         private ObservableCollection<INewsScraper> Scrapers { get; set; }
 
+        // Button to load text file
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -63,6 +66,7 @@ namespace StockNewsScraper
             }
         }
 
+        // Button to start scraping
         private async void Button_Click_1(object sender, RoutedEventArgs e)
         {
             OutputText.Text = string.Empty;
@@ -70,7 +74,7 @@ namespace StockNewsScraper
             int overallProgress = 0;
 
             OverallProgress.Value = overallProgress;
-
+            // Collect Price Data from Quandl
             var api = new QuandlApi();
 
             var selectedList = new List<INewsScraper>();
@@ -79,7 +83,7 @@ namespace StockNewsScraper
             {
                 selectedList.Add((INewsScraper)n);
             }
-
+            // Loop through each company to collect data.
             foreach (var c in CompList)
             {
                 WriteToOutput("Collecting Data for: " + c);
@@ -88,7 +92,7 @@ namespace StockNewsScraper
 
                 int sourceProgress = 0;
                 SourceProgress.Value = sourceProgress;
-
+                // Loop through each each nes scraper for the company
                 foreach (INewsScraper s in selectedList)
                 {
                     await Task.Delay(1000);

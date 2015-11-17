@@ -20,10 +20,11 @@ namespace StockNewsScraper.Scraper
         {
             try
             {
+                // Url for making request
                 string url = "http://www.nasdaq.com/symbol/" + symbol + "/news-headlines";
                 bool hasNextPage = false;
                 string nextPageUrl = string.Empty;
-
+                // Action to collect the link on each page
                 Action<string> scrapeLinks =
                     html =>
                     {
@@ -46,11 +47,10 @@ namespace StockNewsScraper.Scraper
                                     });
                             }
                         }
-
+                        // Check if next button ecist on the page
                         var pageNode = node.SelectSingleNode("//ul[@class='pager']");
-
                         hasNextPage = pageNode != null;
-
+                        // Move to next page
                         if(hasNextPage)
                         {
                             var nextNode = pageNode.ChildNodes.First(n => n.InnerText.Trim().Contains("next"));
@@ -70,13 +70,11 @@ namespace StockNewsScraper.Scraper
                 string response = Utilities.MakeRequest(url);
 
                 scrapeLinks(response);
-
+                // Continuously scrape until no pages are left
                 while (hasNextPage)
                 {
                     scrapeLinks(Utilities.MakeRequest(nextPageUrl));
                 }
-
-
             }
             catch
             {
@@ -86,7 +84,7 @@ namespace StockNewsScraper.Scraper
         public override void Scrape(string symbol)
         {
             base.Scrape(symbol);
-
+            // Collect data from each ;oml
             foreach (var article in articleList)
             {
                 try

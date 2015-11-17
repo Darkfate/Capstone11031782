@@ -24,6 +24,7 @@ namespace StockNewsScraper.Scraper
         {
             base.Scrape(symbol);
 
+            // Go through each news arcle and collect data
             foreach (var result in newsList)
             {
                 try
@@ -62,8 +63,8 @@ namespace StockNewsScraper.Scraper
 
         protected override void GetLinks(string symbol)
         {
+            // Building Url
             string baseUrl = "http://www.marketwatch.com/news/headline/getheadlines";
-
             string apiUrl = string.Format(
                 "{0}?ticker={1}&countryCode={2}&dateTime={3}&docId={4}&docType={5}&sequence={6}&messageNumber={7}&count={8}&channelName={9}&topic={10}&_={11}",
                 baseUrl,
@@ -83,10 +84,10 @@ namespace StockNewsScraper.Scraper
 
             try
             {
+                // Making Request against server
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(apiUrl);
 
                 var response = request.GetResponse();
-
 
                 string json = string.Empty;
 
@@ -96,6 +97,7 @@ namespace StockNewsScraper.Scraper
                     json = reader.ReadToEnd();
                 }
 
+                // Deserialising JSON response into an object
                 newsList = JsonConvert.DeserializeObject<List<MarketWatchNews>>(json);
 
             }
