@@ -1,8 +1,10 @@
 ﻿using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace StockNewsScraper.Scraper
@@ -33,6 +35,11 @@ namespace StockNewsScraper.Scraper
 
                     var list = doc.DocumentNode.SelectNodes("//ol[@id='fb-results']//h3//a");
 
+                    if (list == null)
+                    {
+                        return;
+                    }
+
                     foreach (var node in list)
                     {
                         string title = node.InnerText.Trim();
@@ -49,6 +56,38 @@ namespace StockNewsScraper.Scraper
             while (currentNumberOfResult < maxNumberOfResults && hasNext)
             {
                 makeRequest("start_rank=" + (currentNumberOfResult + 1));
+            }
+        }
+
+        public override void Scrape(string symbol)
+        {
+            base.Scrape(symbol);
+
+            foreach (var article in articleList)
+            {
+                try
+                {
+                    string response = Utilities.MakeRequest(article.Url);
+
+                    HtmlDocument doc = new HtmlDocument();
+                    doc.LoadHtml(response);
+
+                    HtmlNode node = doc.DocumentNode;
+
+                    string body = node.SelectSingleNode("//div[@class='article section']").InnerText.Trim();
+
+                    var dateMatch = Regex.Match(article.Url, @"\d\d\d\d\-\d\d-\d\d");
+
+                    string dateString = dateMatch.Success ? dateMatch.Value : string.Empty;
+
+                    DateTime date = DateTime.ParseExact(dateString, "yyyy-MM-dd", new CultureInfo("en-US"));
+                    
+                    Save(article.Title, body, date);
+
+                }
+                catch
+                {
+                }
             }
         }
 
