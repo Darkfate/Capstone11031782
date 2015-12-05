@@ -39,6 +39,7 @@ namespace StockNewsScraper
             Scrapers.Add(new MarketWatch());
             Scrapers.Add(new TheGuardian());
             Scrapers.Add(new NASDAQ());
+            Scrapers.Add(new ABC());
 
             NewsSourceList.ItemsSource = Scrapers;
 
